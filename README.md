@@ -2,4 +2,4 @@
 
 Personal online CV and professional portfolio.
 
-🔗 **Live version**:
+🔗 **Live version**: https://mariampinto.github.io/curriculum_vitae/ 
