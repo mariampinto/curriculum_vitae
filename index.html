@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Manuel Pinto - CV</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      :root,
+      [data-bs-theme="light"] {
+        --bs-body-bg: #f8f9fa;
+        --bs-body-color: #333333;
+        --card-bg: #ffffff;
+        --muted: #555555;
+        --accent: #3e6ae1;
+        --header-gradient: linear-gradient(135deg, #e13e3e 0%, #2e4db3 100%);
+      }
+
+      [data-bs-theme="dark"] {
+        --bs-body-bg: #0b0d12;
+        --bs-body-color: #e8ebf1;
+        --card-bg: #0f141c;
+        --muted: #a9b2c3;
+        --accent: #3e6ae1;
+        --header-gradient: linear-gradient(
+          135deg,
+          rgba(62, 106, 225, 0.28) 0%,
+          rgba(15, 20, 28, 1) 65%
+        );
+      }
+
+      body {
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--bs-body-bg);
+        color: var(--bs-body-color);
+      }
+
+      .cv-container {
+        background: var(--card-bg);
+        border: 1px solid rgba(var(--bs-border-color-rgb), 0.15);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .header {
+        background: var(--header-gradient);
+        color: white;
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .header-avatar img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center 20%;
+        border: 5px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      .section-title {
+        position: relative;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 90px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+
+      /* ── Modern Professional Experience Timeline ── */
+      .timeline-modern {
+        position: relative;
+        padding-left: 2.2rem;
+      }
+
+      .timeline-modern::before {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        bottom: 0;
+        left: 0.6rem;
+        width: 3.5px;
+        background: linear-gradient(
+          to bottom,
+          var(--accent) 0%,
+          var(--accent) 30%,
+          var(--bs-border-color) 30%,
+          var(--bs-border-color) 100%
+        );
+      }
+
+      .timeline-entry {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+
+      .timeline-entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: 0.3rem;
+        top: 0.5rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--marker-bg);
+        border: 4px solid var(--marker-border);
+        box-shadow: 0 0 0 6px var(--marker-ring);
+        z-index: 1;
+      }
+
+      .timeline-content {
+        background: var(--card-bg);
+        padding: 1.25rem 1.5rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(var(--bs-border-color-rgb), 0.12);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .company-name {
+        font-size: 1.05rem;
+      }
+
+      .timeline-list {
+        padding-left: 1.4rem;
+        margin: 0;
+      }
+
+      .timeline-list li {
+        margin-bottom: 0.45rem;
+        position: relative;
+      }
+
+      .timeline-list li::before {
+        content: "•";
+        position: absolute;
+        left: -1.4rem;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      [data-bs-theme="dark"] .timeline-content {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .experience-date {
+        font-size: 0.95rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .skill-tag {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.9rem;
+        background-color: rgba(62, 106, 225, 0.1);
+        border: 1px solid rgba(var(--bs-border-color-rgb), 0.3);
+        color: var(--bs-body-color);
+      }
+
+      .lang-progress {
+        height: 0.8rem;
+        width: 220px;
+      }
+
+      progress {
+        accent-color: var(--accent);
+      }
+
+      @media print {
+        .cv-container {
+          box-shadow: none;
+          border: none;
+        }
+        .header {
+          background: #3e6ae1 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .theme-toggle,
+        .timeline-modern::before,
+        .timeline-marker {
+          display: none !important;
+        }
+        .timeline-content:hover {
+          transform: none !important;
+          box-shadow: none !important;
+        }
+        .skill-tag {
+          border: 1px solid #ccc;
+          background: transparent;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container my-4 my-lg-5">
+      <div class="cv-container shadow-lg">
+        <!-- Header -->
+        <header class="header">
+          <button
+            class="btn btn-sm btn-outline-light position-absolute top-0 end-0 mt-4 me-4 theme-toggle"
+            id="themeToggle"
+            type="button"
+          >
+            <i class="bi bi-moon-stars-fill me-1"></i> Toggle theme
+          </button>
+
+          <div class="header-avatar mb-4">
+            <img
+              src="./profile_pic.jpg"
+              alt="Maria Manuel Pinto"
+              class="rounded-circle"
+            />
+          </div>
+
+          <h1 class="display-4 fw-bold mb-2">Maria Manuel Pinto</h1>
+          <p class="fs-4 opacity-90 mb-4">
+            Software QA Engineer | Project Management | Innovation Analyst
+          </p>
+
+          <div
+            class="d-flex flex-wrap justify-content-center gap-4 gap-md-5 fs-6"
+          >
+            <span
+              ><i class="bi bi-envelope-at me-2"></i
+              ><a
+                href="mailto:cv.email915@passmail.net"
+                class="text-white text-decoration-none"
+                >cv.email915@passmail.net</a
+              ></span
+            >
+            <span
+              ><i class="bi bi-linkedin me-2"></i
+              ><a
+                href="https://linkedin.com/in/mariampinto"
+                target="_blank"
+                class="text-white text-decoration-none"
+                >linkedin.com/in/mariampinto</a
+              ></span
+            >
+            <span><i class="bi bi-geo-alt me-2"></i>Porto, Portugal</span>
+          </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-4 p-md-5">
+          <!-- Professional Summary -->
+          <section class="mb-5">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="text-muted fs-5 lh-base">
+              Software QA Engineer with hands-on experience in test automation
+              and manual testing across frontend and backend. Focused on
+              requirements analysis, test design, bug reporting, and CI/CD with
+              Azure DevOps. Experienced with Cypress (TypeScript), Selenium,
+              Postman, and Xray/Jira. Background in innovation projects and
+              scientific research.
+            </p>
+          </section>
+
+          <!-- Professional Experience – Modern Minimal Style -->
+          <section class="mb-5">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="timeline-modern">
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div
+                    class="d-flex justify-content-between align-items-baseline flex-wrap mb-1 gap-3"
+                  >
+                    <h3 class="fs-5 fw-bold mb-0">Software QA Engineer</h3>
+                    <span class="text-muted fs-6">Aug 2024 – Present</span>
+                  </div>
+                  <div class="company-name text-primary fw-medium mb-2">
+                    NOKIA
+                  </div>
+                  <ul class="timeline-list mb-0">
+                    <li>
+                      Test automation with <strong>Cypress</strong> +
+                      <strong>TypeScript</strong>
+                    </li>
+                    <li>API testing using <strong>Postman</strong></li>
+                    <li>CI/CD with <strong>Azure DevOps</strong></li>
+                    <li>Manual testing (frontend + backend)</li>
+                    <li>
+                      Requirements analysis, test case design and defect
+                      management
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div
+                    class="d-flex justify-content-between align-items-baseline flex-wrap mb-1 gap-3"
+                  >
+                    <h3 class="fs-5 fw-bold mb-0">QA Engineer Trainee</h3>
+                    <span class="text-muted fs-6">Dec 2023 – Jul 2024</span>
+                  </div>
+                  <div class="company-name text-primary fw-medium mb-2">
+                    NOKIA
+                  </div>
+                  <ul class="timeline-list mb-0">
+                    <li>Software requirements analysis and test design</li>
+                    <li>Bug reporting, triage and defect lifecycle tracking</li>
+                    <li>Manual testing (frontend + backend)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div
+                    class="d-flex justify-content-between align-items-baseline flex-wrap mb-1 gap-3"
+                  >
+                    <h3 class="fs-5 fw-bold mb-0">Innovation Analyst</h3>
+                    <span class="text-muted fs-6">Oct – Nov 2023</span>
+                  </div>
+                  <div class="company-name text-primary fw-medium mb-2">
+                    Beta-i collaborative innovation
+                  </div>
+                  <ul class="timeline-list mb-0">
+                    <li>
+                      Research Innovation Analyst for the New Generation Storage
+                      (NGS) project aligned with the EU energy transition for
+                      the electrification of mobility.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div
+                    class="d-flex justify-content-between align-items-baseline flex-wrap mb-1 gap-3"
+                  >
+                    <h3 class="fs-5 fw-bold mb-0">Researcher, MSc</h3>
+                    <span class="text-muted fs-6">2021 – 2023</span>
+                  </div>
+                  <div class="company-name text-primary fw-medium mb-2">
+                    Center for Neuroscience and Cell Biology
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section class="mb-5">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-3"
+                >
+                  <div>
+                    <h3 class="fs-5 fw-bold mb-1">
+                      CS50’s Introduction to Computer Science
+                    </h3>
+                    <div class="text-muted">
+                      Harvard University, Online Course
+                    </div>
+                  </div>
+                  <span class="text-muted text-nowrap">2023 – Present</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-3"
+                >
+                  <div>
+                    <h3 class="fs-5 fw-bold mb-1">
+                      MSc in Pharmaceutical Biotechnology
+                    </h3>
+                    <div class="text-muted">
+                      Faculty of Pharmacy – University of Coimbra
+                    </div>
+                  </div>
+                  <span class="text-muted text-nowrap">2018 – 2020</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2 flex-wrap gap-3"
+                >
+                  <div>
+                    <h3 class="fs-5 fw-bold mb-1">
+                      BSc in Biomedical Sciences
+                    </h3>
+                    <div class="text-muted">
+                      Department of Medical Sciences, University of Aveiro
+                    </div>
+                  </div>
+                  <span class="text-muted text-nowrap">2015 – 2018</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="mb-5">
+            <h2 class="section-title">Skills</h2>
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <h5 class="fw-semibold mb-3">Tools & Technologies</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag rounded-pill">Software Testing</span>
+                  <span class="skill-tag rounded-pill">Test Automation</span>
+                  <span class="skill-tag rounded-pill">Project Management</span>
+                  <span class="skill-tag rounded-pill">Cypress</span>
+                  <span class="skill-tag rounded-pill">Selenium</span>
+                  <span class="skill-tag rounded-pill">Postman</span>
+                  <span class="skill-tag rounded-pill">Xray</span>
+                  <span class="skill-tag rounded-pill">Jira</span>
+                  <span class="skill-tag rounded-pill">Confluence</span>
+                  <span class="skill-tag rounded-pill">Azure DevOps</span>
+                  <span class="skill-tag rounded-pill">Python</span>
+                  <span class="skill-tag rounded-pill">TypeScript</span>
+                  <span class="skill-tag rounded-pill">SQL</span>
+                  <span class="skill-tag rounded-pill">Git</span>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <h5 class="fw-semibold mb-3">Soft Skills</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag rounded-pill">Critical Thinking</span>
+                  <span class="skill-tag rounded-pill">Problem Solving</span>
+                  <span class="skill-tag rounded-pill">Creativity</span>
+                  <span class="skill-tag rounded-pill">Time Management</span>
+                  <span class="skill-tag rounded-pill">Teamwork</span>
+                  <span class="skill-tag rounded-pill">Stress Management</span>
+                  <span class="skill-tag rounded-pill">Leadership</span>
+                  <span class="skill-tag rounded-pill">Flexibility</span>
+                  <span class="skill-tag rounded-pill">Adaptability</span>
+                  <span class="skill-tag rounded-pill"
+                    >Attention to Detail</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Languages -->
+          <section class="mb-5">
+            <h2 class="section-title">Languages</h2>
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center gap-3 mb-3">
+                <span class="fw-medium" style="min-width: 140px"
+                  >Portuguese</span
+                >
+                <progress
+                  class="lang-progress"
+                  value="100"
+                  max="100"
+                ></progress>
+              </li>
+              <li class="d-flex align-items-center gap-3 mb-3">
+                <span class="fw-medium" style="min-width: 140px">English</span>
+                <progress class="lang-progress" value="90" max="100"></progress>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <span class="fw-medium" style="min-width: 140px">Spanish</span>
+                <progress class="lang-progress" value="40" max="100"></progress>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Courses & Certifications – Complete list -->
+          <section class="mb-5">
+            <h2 class="section-title">Courses & Certifications</h2>
+            <ul class="list-group list-group-flush">
+              <!-- LinkedIn Learning -->
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/ff0586315b567ccc0135e8b5266278c929a60d01fdeedc9777ea3c44ab4d65d1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Azure Essential Training for Developers</strong
+                      ><br />
+                      <small class="text-muted">Dec 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/77d6f59b496c08a12a0b6462307487809fd76e3e132041520b3a8ee7c8c863aa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Learning REST APIs</strong><br />
+                      <small class="text-muted">Dec 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/17793efeabe0ed3841aeb9235c97a3f18f46cba01dfec3c835aa4e3a6927c7fa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Advanced Cypress</strong><br />
+                      <small class="text-muted">Aug 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/beb8c6cbaef6d1451f62483cc5673d0eea9c858f2cbca552353dfc33c048f376"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Unix Essential Training</strong><br />
+                      <small class="text-muted">Jul 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/600d3246da85cacc1f5498de4b900fa321a474b76de7bc0cb267373cafcceafa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Getting Started with Software Testing</strong
+                      ><br />
+                      <small class="text-muted">Feb 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/44e0e4ef1c526e016f01d6e91444cf9f5fc52156dc160864aa36730c29f4f562?u=2288114"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>SQL for Testers</strong><br />
+                      <small class="text-muted">Feb 2025</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://learn.microsoft.com/en-us/users/mariapinto-7985/achievements/ham5smx8?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="36"
+                      width="36"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <rect
+                          x="17"
+                          y="17"
+                          width="10"
+                          height="10"
+                          fill="#FEBA08"
+                        ></rect>
+                        <rect
+                          x="5"
+                          y="17"
+                          width="10"
+                          height="10"
+                          fill="#05A6F0"
+                        ></rect>
+                        <rect
+                          x="17"
+                          y="5"
+                          width="10"
+                          height="10"
+                          fill="#80BC06"
+                        ></rect>
+                        <rect
+                          x="5"
+                          y="5"
+                          width="10"
+                          height="10"
+                          fill="#F25325"
+                        ></rect>
+                      </g>
+                    </svg>
+                    <div>
+                      <strong>Introduction to Azure DevOps</strong><br />
+                      <small class="text-muted">Nov 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://learn.cypress.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 96 96"
+                      id="Cypress-Icon--Streamline-Svg-Logos"
+                      height="28"
+                      width="28"
+                    >
+                      <desc></desc>
+                      <path
+                        fill="url(#a)"
+                        d="m53.0123 83.2292-1.5918 3.8649c-.3163.765-1.0394 1.2831-1.853 1.3184-.5373.0202-1.0796.0352-1.627.0352-18.7354-.0099-35.3118-13.2602-39.41948-31.5178l-6.37747 1.4443C4.44847 68.6151 10.2334 77.9099 18.4337 84.5528c8.2956 6.7181 18.7456 10.427 29.4365 10.4471l.0955 0c.6276 0 1.2504-.015 1.8729-.0401 3.3544-.141 6.3524-2.2496 7.633-5.3747l2.0789-5.0525-6.5382-1.3034Z"
+                      ></path>
+                      <path
+                        fill="url(#b)"
+                        d="M2.66721 60.4529C1.56245 56.417 1 52.2249 1 48.0028 1 28.7287 13.0669 11.1052 31.0293 4.15552l2.3551 6.11438C17.9228 16.2534 7.53814 31.4159 7.53814 48.0028c0 3.6384.48205 7.2415 1.43114 10.7138l-6.30207 1.7363Z"
+                      ></path>
+                      <path
+                        fill="url(#c)"
+                        d="M83.8715 29.3827C76.8813 15.921 63.1222 7.5572 47.9721 7.5572c-5.3681 0-10.5855 1.03667-15.4968 3.0748l-2.5056-6.05399C35.6793 2.20777 41.7353 1 47.9721 1c17.6007 0 33.5794 9.7125 41.6993 25.3532l-5.7999 3.0295Z"
+                      ></path>
+                      <path
+                        fill="#09293f"
+                        d="M33.947 38.3049c3.7913 0 6.8796 2.0281 8.4664 5.5658l.1255.2769 6.3674-2.169-.1357-.3271c-2.4656-6.0238-8.1449-9.768-14.8236-9.768-4.6952 0-8.5117 1.5099-11.6653 4.6098-3.1334 3.0798-4.7202 6.9548-4.7202 11.5191 0 4.5241 1.5868 8.3789 4.7202 11.4588 3.1536 3.1 6.9701 4.6097 11.6653 4.6097 6.6787 0 12.358-3.7441 14.8236-9.7629l.1357-.327-6.3774-2.1742-.1206.2869c-1.421 3.4774-4.5847 5.5558-8.4613 5.5558-2.6413 0-4.8709-.9259-6.6386-2.7477-1.7876-1.8469-2.6915-4.1668-2.6915-6.8943 0-2.7478.8838-5.0224 2.6915-6.9549 1.7626-1.8316 3.9973-2.7577 6.6386-2.7577Z"
+                      ></path>
+                      <path
+                        fill="#09293f"
+                        d="m73.8285 32.4775-9.074 23.0332-9.1344-23.0332h-7.4722l12.8102 31.4374-9.1143 22.1726 6.5332 1.3035 22.5119-54.9135h-7.0604Z"
+                      ></path>
+                      <path
+                        fill="url(#d)"
+                        d="M89.6715 26.353c3.3058 6.4399 5.3284 14.0039 5.3284 21.7463 0 18.0656-10.1605 33.7506-25.0617 41.6181l-3.2194-5.7089c12.9216-6.7387 21.7474-20.29 21.7474-35.9092 0-6.7779-1.6572-13.1054-4.5947-18.7167l5.8-3.0296Z"
+                      ></path>
+                      <defs>
+                        <linearGradient
+                          id="a"
+                          x1="364.95"
+                          x2="4852.62"
+                          y1="1733.09"
+                          y2="2931.33"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#315c55"></stop>
+                          <stop offset="1" stop-color="#09293f"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="b"
+                          x1="1759.39"
+                          x2="1341.74"
+                          y1="1538.94"
+                          y2="5605.29"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#4fb38d"></stop>
+                          <stop offset="1" stop-color="#315c55"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="c"
+                          x1="860.36"
+                          x2="4172.52"
+                          y1="1420.14"
+                          y2="2027.28"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#4fb38d"></stop>
+                          <stop offset="1" stop-color="#97dec0"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="d"
+                          x1="1589.93"
+                          x2="-216.115"
+                          y1="1983.82"
+                          y2="5365.35"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#97dec0"></stop>
+                          <stop
+                            offset="1"
+                            stop-color="#fffff0"
+                            stop-opacity="0"
+                          ></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div>
+                      <strong>Advanced Cypress Testing Concepts</strong><br />
+                      <small class="text-muted">Nov 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/c435fada42b5554287429c65ce2361a00895211b93acf875721af198108bcafd?u=2288114"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Mobile Testting with Appium</strong><br />
+                      <small class="text-muted">Oct 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://learn.cypress.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 96 96"
+                      id="Cypress-Icon--Streamline-Svg-Logos"
+                      height="28"
+                      width="28"
+                    >
+                      <desc></desc>
+                      <path
+                        fill="url(#a)"
+                        d="m53.0123 83.2292-1.5918 3.8649c-.3163.765-1.0394 1.2831-1.853 1.3184-.5373.0202-1.0796.0352-1.627.0352-18.7354-.0099-35.3118-13.2602-39.41948-31.5178l-6.37747 1.4443C4.44847 68.6151 10.2334 77.9099 18.4337 84.5528c8.2956 6.7181 18.7456 10.427 29.4365 10.4471l.0955 0c.6276 0 1.2504-.015 1.8729-.0401 3.3544-.141 6.3524-2.2496 7.633-5.3747l2.0789-5.0525-6.5382-1.3034Z"
+                      ></path>
+                      <path
+                        fill="url(#b)"
+                        d="M2.66721 60.4529C1.56245 56.417 1 52.2249 1 48.0028 1 28.7287 13.0669 11.1052 31.0293 4.15552l2.3551 6.11438C17.9228 16.2534 7.53814 31.4159 7.53814 48.0028c0 3.6384.48205 7.2415 1.43114 10.7138l-6.30207 1.7363Z"
+                      ></path>
+                      <path
+                        fill="url(#c)"
+                        d="M83.8715 29.3827C76.8813 15.921 63.1222 7.5572 47.9721 7.5572c-5.3681 0-10.5855 1.03667-15.4968 3.0748l-2.5056-6.05399C35.6793 2.20777 41.7353 1 47.9721 1c17.6007 0 33.5794 9.7125 41.6993 25.3532l-5.7999 3.0295Z"
+                      ></path>
+                      <path
+                        fill="#09293f"
+                        d="M33.947 38.3049c3.7913 0 6.8796 2.0281 8.4664 5.5658l.1255.2769 6.3674-2.169-.1357-.3271c-2.4656-6.0238-8.1449-9.768-14.8236-9.768-4.6952 0-8.5117 1.5099-11.6653 4.6098-3.1334 3.0798-4.7202 6.9548-4.7202 11.5191 0 4.5241 1.5868 8.3789 4.7202 11.4588 3.1536 3.1 6.9701 4.6097 11.6653 4.6097 6.6787 0 12.358-3.7441 14.8236-9.7629l.1357-.327-6.3774-2.1742-.1206.2869c-1.421 3.4774-4.5847 5.5558-8.4613 5.5558-2.6413 0-4.8709-.9259-6.6386-2.7477-1.7876-1.8469-2.6915-4.1668-2.6915-6.8943 0-2.7478.8838-5.0224 2.6915-6.9549 1.7626-1.8316 3.9973-2.7577 6.6386-2.7577Z"
+                      ></path>
+                      <path
+                        fill="#09293f"
+                        d="m73.8285 32.4775-9.074 23.0332-9.1344-23.0332h-7.4722l12.8102 31.4374-9.1143 22.1726 6.5332 1.3035 22.5119-54.9135h-7.0604Z"
+                      ></path>
+                      <path
+                        fill="url(#d)"
+                        d="M89.6715 26.353c3.3058 6.4399 5.3284 14.0039 5.3284 21.7463 0 18.0656-10.1605 33.7506-25.0617 41.6181l-3.2194-5.7089c12.9216-6.7387 21.7474-20.29 21.7474-35.9092 0-6.7779-1.6572-13.1054-4.5947-18.7167l5.8-3.0296Z"
+                      ></path>
+                      <defs>
+                        <linearGradient
+                          id="a"
+                          x1="364.95"
+                          x2="4852.62"
+                          y1="1733.09"
+                          y2="2931.33"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#315c55"></stop>
+                          <stop offset="1" stop-color="#09293f"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="b"
+                          x1="1759.39"
+                          x2="1341.74"
+                          y1="1538.94"
+                          y2="5605.29"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#4fb38d"></stop>
+                          <stop offset="1" stop-color="#315c55"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="c"
+                          x1="860.36"
+                          x2="4172.52"
+                          y1="1420.14"
+                          y2="2027.28"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#4fb38d"></stop>
+                          <stop offset="1" stop-color="#97dec0"></stop>
+                        </linearGradient>
+                        <linearGradient
+                          id="d"
+                          x1="1589.93"
+                          x2="-216.115"
+                          y1="1983.82"
+                          y2="5365.35"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#97dec0"></stop>
+                          <stop
+                            offset="1"
+                            stop-color="#fffff0"
+                            stop-opacity="0"
+                          ></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div>
+                      <strong>Cypress Fundamentals</strong><br />
+                      <small class="text-muted">Sep 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/c1a8925c7739f2604506e78081df99dfc3b8ddd3bb75d8e2347c840408438451"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Postman Essential Training</strong><br />
+                      <small class="text-muted">Sep 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/d9443e54c165eb4eb20b6a686d40f2526846b95af1ab0b15088442c21c05afe3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>JMeter: Performance and Load Testing</strong
+                      ><br />
+                      <small class="text-muted">Sep 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/8020728f0e78bf004ed1e333d31e2187f6ef000a4220d3ee7eb4f31b0ca4cdd2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Learning Selenium</strong><br />
+                      <small class="text-muted">Sep 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/f13c0d93214bdbcfdf0169a45bcfb764ced4bf408efcc833726bdb33ad3f3a23?u=2288114"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Test Automation Foundations</strong><br />
+                      <small class="text-muted">Aug 2024</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.linkedin.com/learning/certificates/4f8d5d6f375c2b195a1f1102d420d273d7dd16f00915d1e9d90f5bd6f248247f?u=2288114"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      class="flex-shrink-0"
+                    >
+                      <rect width="24" height="24" fill="#0A66C2" rx="4" />
+                      <path
+                        fill="#ffffff"
+                        d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Understanding Manual Testing</strong><br />
+                      <small class="text-muted">Dec 2023</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- Coursera IBM -->
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.coursera.org/account/accomplishments/verify/D99LA5LY7LD7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="38"
+                      height="16"
+                      viewBox="0 0 200 80"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="flex-shrink-0"
+                    >
+                      <text
+                        x="0"
+                        y="65"
+                        font-family="Arial Black, Helvetica, sans-serif"
+                        font-size="72"
+                        font-weight="900"
+                        fill="#006699"
+                      >
+                        IBM
+                      </text>
+                    </svg>
+                    <div>
+                      <strong>Getting Started with Git and GitHub</strong><br />
+                      <small class="text-muted">Oct 2023</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- Coursera Google -->
+              <li class="list-group-item bg-transparent px-0 py-3">
+                <a
+                  href="https://www.coursera.org/account/accomplishments/professional-cert/DTKR4DSUDD3B"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-reset d-flex justify-content-between align-items-center flex-wrap gap-3"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 48 48"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="flex-shrink-0"
+                    >
+                      <path
+                        fill="#EA4335"
+                        d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+                      />
+                      <path
+                        fill="#4285F4"
+                        d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+                      />
+                      <path
+                        fill="#FBBC05"
+                        d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+                      />
+                      <path
+                        fill="#34A853"
+                        d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+                      />
+                    </svg>
+                    <div>
+                      <strong>Project Management Certification</strong><br />
+                      <small class="text-muted">Sep 2023</small>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Theme Toggle -->
+    <script>
+      const html = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
+
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-bs-theme", savedTheme);
+
+      toggle?.addEventListener("click", () => {
+        const current = html.getAttribute("data-bs-theme");
+        const next = current === "dark" ? "light" : "dark";
+        html.setAttribute("data-bs-theme", next);
+        localStorage.setItem("theme", next);
+      });
+    </script>
+  </body>
+</html>
