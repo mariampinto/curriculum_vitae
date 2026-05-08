@@ -113,13 +113,7 @@
         bottom: 0;
         left: 0.6rem;
         width: 3.5px;
-        background: linear-gradient(
-          to bottom,
-          var(--accent) 0%,
-          var(--accent) 30%,
-          var(--bs-border-color) 30%,
-          var(--bs-border-color) 100%
-        );
+        background: var(--bs-border-color);
       }
 
       .timeline-entry {
@@ -129,6 +123,21 @@
 
       .timeline-entry:last-child {
         margin-bottom: 0;
+      }
+
+      .timeline-entry.current ~ .timeline-entry {
+        opacity: 0.8;
+      }
+
+      .timeline-entry.current::before {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        height: 2.2rem;
+        left: 0.6rem;
+        width: 3.5px;
+        background: var(--accent);
+        z-index: 2;
       }
 
       .timeline-marker {
@@ -142,6 +151,12 @@
         border: 4px solid var(--marker-border);
         box-shadow: 0 0 0 6px var(--marker-ring);
         z-index: 1;
+      }
+
+      .timeline-entry.current .timeline-marker {
+        background: var(--accent);
+        border-color: white;
+        box-shadow: 0 0 0 6px rgba(62, 106, 225, 0.2);
       }
 
       .timeline-content {
@@ -158,6 +173,11 @@
       .timeline-content:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-entry.current .timeline-content {
+        border-color: rgba(62, 106, 225, 0.3);
+        background: linear-gradient(135deg, rgba(62, 106, 225, 0.05) 0%, rgba(62, 106, 225, 0.02) 100%);
       }
 
       .company-name {
@@ -219,9 +239,7 @@
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
-        .theme-toggle,
-        .timeline-modern::before,
-        .timeline-marker {
+        .theme-toggle {
           display: none !important;
         }
         .timeline-content:hover {
@@ -306,7 +324,7 @@
             <h2 class="section-title">Professional Experience</h2>
 
             <div class="timeline-modern">
-              <div class="timeline-entry">
+              <div class="timeline-entry current">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div
@@ -1070,7 +1088,6 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       const themeToggle = document.getElementById("themeToggle");
       const html = document.documentElement;
@@ -1080,8 +1097,8 @@
       html.setAttribute("data-bs-theme", currentTheme);
 
       themeToggle.addEventListener("click", () => {
-        const newTheme =
-          html.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
+        const theme = html.getAttribute("data-bs-theme");
+        const newTheme = theme === "light" ? "dark" : "light";
         html.setAttribute("data-bs-theme", newTheme);
         localStorage.setItem("theme", newTheme);
       });
