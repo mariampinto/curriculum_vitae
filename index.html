@@ -110,16 +110,21 @@
         content: "";
         position: absolute;
         top: 0.8rem;
+        height: 2.2rem;
+        left: 0.6rem;
+        width: 3.5px;
+        background: var(--accent);
+        z-index: 2;
+      }
+
+      .timeline-modern::after {
+        content: "";
+        position: absolute;
+        top: calc(0.8rem + 2.2rem);
         bottom: 0;
         left: 0.6rem;
         width: 3.5px;
-        background: linear-gradient(
-          to bottom,
-          var(--accent) 0%,
-          var(--accent) 30%,
-          var(--bs-border-color) 30%,
-          var(--bs-border-color) 100%
-        );
+        background: var(--bs-border-color);
       }
 
       .timeline-entry {
@@ -221,6 +226,7 @@
         }
         .theme-toggle,
         .timeline-modern::before,
+        .timeline-modern::after,
         .timeline-marker {
           display: none !important;
         }
